@@ -1,0 +1,7 @@
+---
+Files:
+  - a.cpp
+
+Hooks:
+  - type: return
+    addr: "0x02414714" # al::LiveActor::makeActorDead()

@@ -1,0 +1,39 @@
+---
+Name: PeepaU
+ModulesDir: Modules
+IncludeDir: Include
+SourceDir: Source
+RpxDir: Data
+Modules:
+  - # list of names of global modules to compile (REQUIRED)
+  - # ...
+Defines:
+  - cafe
+
+Targets: # key/value pairs of indefinite target configurations
+  RedCarpet: # a single target configuration (At least 1 required)
+    Extends: # name of a template target to inherit settings from (default: none)
+    AddrMap: # name of conv/*.offs file to use with this target (default: TargetName)
+    BaseRpx: # name of {RpxDir}/*.rpx file to use with this target (default: TargetName)
+    Modules:
+      - Test
+    Defines:
+      - # list of additional C++ defines to set with this target (default: empty list)
+      - # ...
+    Remove/Modules:
+      - # list of names of global modules to remove from compilation with this target (default: empty list)
+      - # ...
+    Remove/Defines:
+      - # list of global C++ defines to remove from this target (default: empty list)
+      - # ...
+    
+
+  Template/TemplateName: # a target configuration template, identified by the "Template/" prefix (optional)
+    # other non-template targets can inherit the settings defined here with the Extends setting
+    # templates cannot be nested, so the Extends setting is not allowed on them.
+    # aside from Extends, all target settings are also valid here.
+    #
+    # AddrMap and BaseRpx will default to TemplateName instead of TargetName here
+    # if AddrMap/BaseRpx are set on both template and an extending target, the extending target has priority.
+    #
+    # all the list settings are merged together if set on both template and extending target.

@@ -1,0 +1,14 @@
+Data/
+objs
+linker
+
+*.o
+*.elf
+*.rpx
+*.gpj
+*.ld
+*.x
+
+.vscode/
+.cache/
+compile_commands.json
