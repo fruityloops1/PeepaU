@@ -15,7 +15,7 @@ __vtbl__Q2_4sead23SafeStringBase__tm__2_c = 0x10285d50;
 createActorFunction__tm__6_4Coin__2alFPCc_PQ2_2al9LiveActor = 0x022d0b80;
 createActorFunction__tm__8_6Togezo__2alFPCc_PQ2_2al9LiveActor = 0x022d2c84;
 
-__ct__Q2_2al12ActorFactoryFPCc = 0x0080f030;
+__ct__Q2_2al12ActorFactoryFPCc = 0x02498068;
 
 # al/LiveActor/ActorInitFunction
 
