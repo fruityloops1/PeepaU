@@ -149,7 +149,7 @@ public:
     static const s32 cMaximumLength = 0x80000;
 
 protected:
-    virtual void assureTerminationImpl_() const { }
+    void assureTerminationImpl_() const { }
     const T& unsafeAt_(s32 idx) const { return mStringTop[idx]; }
 
     const T* mStringTop;

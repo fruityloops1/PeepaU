@@ -1,0 +1,9 @@
+---
+Files:
+  - pe/Factory/ProjectActorFactory.cpp
+
+Hooks:
+  - type: branch # crashe
+    instr: b 
+    addr: "0x022cf6c0" # ProjectActorFactory::ProjectActorFactory
+    func: __ct__Q2_2pe19ProjectActorFactoryFv

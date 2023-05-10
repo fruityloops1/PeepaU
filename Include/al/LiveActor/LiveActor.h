@@ -62,7 +62,6 @@ protected:
     void* _74;
     ActorSceneInfo* mActorSceneInfo;
     LiveActorFlag* mLiveActorFlag;
-    void* _80;
 
 public:
     LiveActor(const char* name);
@@ -93,7 +92,7 @@ public:
     virtual SceneCameraInfo* getSceneCameraInfo() const;
     virtual void initStageSwitchKeeper();
     virtual void control();
-    virtual void unk() = 0;
+    virtual void unk();
     virtual void FUN_02414d4c();
 
     void initModelKeeper(ModelKeeper*);

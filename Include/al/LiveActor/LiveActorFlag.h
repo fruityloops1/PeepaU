@@ -8,12 +8,13 @@ struct LiveActorFlag {
     bool isClipped;
     bool flag3;
     bool isDraw;
-    bool isClippedByLod;
-    bool isOffCalcAnim;
-    bool isHideModel;
-    bool isColliderDisabled;
+    bool flag5;
+    bool flag6;
+    bool flag7;
+    bool flag8;
     bool flag9;
     bool flag10;
+    bool flag11;
 };
 
 } // namespace al

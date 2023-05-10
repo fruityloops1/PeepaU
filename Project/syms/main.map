@@ -1,0 +1,56 @@
+# ghs
+
+__pure_virtual_called = 0x026b0ac0;
+
+# sead/basis/seadNew
+
+__nw__FUi = 0x02369190;
+
+# sead/prim/seadSafeString
+
+__vtbl__Q2_4sead23SafeStringBase__tm__2_c = 0x10285d50;
+
+# al/Factory/Factory
+
+createActorFunction__tm__6_4Coin__2alFPCc_PQ2_2al9LiveActor = 0x022d0b80;
+createActorFunction__tm__8_6Togezo__2alFPCc_PQ2_2al9LiveActor = 0x022d2c84;
+
+# al/LiveActor/ActorInitFunction
+
+initActorWithArchiveName__2alFPQ2_2al9LiveActorRCQ2_2al13ActorInitInfoRCQ2_4sead23SafeStringBase__tm__2_cPCc = 0x023ff91c;
+
+# al/LiveActor/LiveActor
+
+getEffectKeeper__Q2_2al9LiveActorCFv = 0x02414e6c;
+getAudioKeeper__Q2_2al9LiveActorCFv = 0x02414e74;
+getName__Q2_2al9LiveActorCFv = 0x02414e7c;
+getStageSwitchKeeper__Q2_2al9LiveActorCFv = 0x02414e84;
+initStageSwitchKeeper__Q2_2al9LiveActorFv = 0x02413e8c;
+getSceneObjHolder__Q2_2al9LiveActorCFv = 0x02413ed4;
+getAreaObjDirector__Q2_2al9LiveActorCFv = 0x02413ee8;
+getSceneCameraInfo__Q2_2al9LiveActorCFv = 0x02413f04;
+getCollisionDirector__Q2_2al9LiveActorCFv = 0x02413f30;
+__ct__Q2_2al9LiveActorFPCc = 0x02413f44;
+getNerveKeeper__Q2_2al9LiveActorCFv = 0x02414ea8;
+initAfterPlacement__Q2_2al9LiveActorFv = 0x02414100;
+appear__Q2_2al9LiveActorFv = 0x0241413c;
+makeActorAppeared__Q2_2al9LiveActorFv = 0x02414194;
+kill__Q2_2al9LiveActorFv = 0x0241432c;
+makeActorDead__Q2_2al9LiveActorFv = 0x0241433c;
+movement__Q2_2al9LiveActorFv = 0x024144a8;
+calcAnim__Q2_2al9LiveActorFv = 0x024146a0;
+draw__Q2_2al9LiveActorFv = 0x02414e90;
+startClipped__Q2_2al9LiveActorFv = 0x02414714;
+endClipped__Q2_2al9LiveActorFv = 0x02414898;
+attackSensor__Q2_2al9LiveActorFPQ2_2al9HitSensorT1 = 0x02414e94;
+receiveMsg__Q2_2al9LiveActorFPCQ2_2al9SensorMsgPQ2_2al9HitSensorT2 = 0x02414e98;
+receiveMsgScreenPoint__Q2_2al9LiveActorFPCQ2_2al9SensorMsgPQ2_2al13ScreenPointerPQ2_2al17ScreenPointTarget = 0x02414ea0;
+getBaseMtx__Q2_2al9LiveActorCFv = 0x02414a58;
+control__Q2_2al9LiveActorFv = 0x02414eb0;
+unk__Q2_2al9LiveActorFv = 0x026b0b48;
+FUN_02414d4c__Q2_2al9LiveActorFv = 0x02414d4c;
+
+# Game/Factory/ProjectActorFactory
+
+__ct__19ProjectActorFactoryFv = 0x022cf6c0;
+sActorEntries__19ProjectActorFactory = 0x10326550;

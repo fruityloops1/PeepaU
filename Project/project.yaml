@@ -16,7 +16,8 @@ Targets: # key/value pairs of indefinite target configurations
     AddrMap: # name of conv/*.offs file to use with this target (default: TargetName)
     BaseRpx: # name of {RpxDir}/*.rpx file to use with this target (default: TargetName)
     Modules:
-      - Test
+      - ActorFactory
+      - TestActor
     Defines:
       - # list of additional C++ defines to set with this target (default: empty list)
       - # ...
