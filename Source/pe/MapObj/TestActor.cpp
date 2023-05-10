@@ -3,15 +3,14 @@
 
 namespace pe {
 
-TestActor::TestActor(const char* pName)
-    : LiveActor(pName)
+TestActor::TestActor(const char* name)
+    : LiveActor(0, name)
 {
 }
 
-void TestActor::init(const al::ActorInitInfo& pInfo)
+void TestActor::init(const al::ActorInitInfo& info)
 {
-    // crashe
-    al::initActorWithArchiveName(this, pInfo, "Coin");
+    al::initActorWithArchiveName(this, info, "FairyPrincess06");
 
     makeActorAppeared();
 }

@@ -6,9 +6,9 @@ namespace pe {
 
 class TestActor : public al::LiveActor {
 public:
-    TestActor(const char* pName);
+    TestActor(const char* name);
 
-    virtual void init(const al::ActorInitInfo& pInfo);
+    virtual void init(const al::ActorInitInfo& info);
 };
 
 } // namespace pe

@@ -14,7 +14,7 @@ namespace al {
 
 class Unknown {
 public:
-    virtual void unk() = 0;
+    virtual void unk();
 };
 
 class ActorPoseKeeperBase;
@@ -62,9 +62,10 @@ protected:
     void* _74;
     ActorSceneInfo* mActorSceneInfo;
     LiveActorFlag* mLiveActorFlag;
+    const void* weirdVtbl;
 
 public:
-    LiveActor(const char* name);
+    LiveActor(const void*, const char* name);
 
     virtual NerveKeeper* getNerveKeeper() const;
     virtual void init(const ActorInitInfo& info);
@@ -80,7 +81,7 @@ public:
     virtual void endClipped();
     virtual void attackSensor(HitSensor* me, HitSensor* other);
     virtual void receiveMsg(const SensorMsg* msg, HitSensor* other, HitSensor* me);
-    virtual bool receiveMsgScreenPoint(const SensorMsg* pMsg, ScreenPointer* pPointer, ScreenPointTarget* pTarget);
+    virtual bool receiveMsgScreenPoint(const SensorMsg* msg, ScreenPointer* pointer, ScreenPointTarget* target);
     virtual const char* getName() const;
     virtual sead::Matrix34f* getBaseMtx() const;
     virtual EffectKeeper* getEffectKeeper() const;
@@ -98,7 +99,7 @@ public:
     void initModelKeeper(ModelKeeper*);
     void initNerveKeeper(NerveKeeper*);
     void initPoseKeeper(ActorPoseKeeperBase*);
-    void initRailKeeper(const ActorInitInfo& pInfo);
+    void initRailKeeper(const ActorInitInfo& info);
 
     ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
     SubActorKeeper* getSubActorKeeper() const { return mSubActorKeeper; }
