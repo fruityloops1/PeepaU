@@ -4,7 +4,11 @@
 
 class ProjectActorFactory : public al::ActorFactory {
 public:
-    ProjectActorFactory();
+    ProjectActorFactory()
+        : ActorFactory("アクターファクトリー")
+    {
+        initFactory(sActorEntries);
+    }
 
     static al::ActorFactoryTableEntry sActorEntries[359];
 };
