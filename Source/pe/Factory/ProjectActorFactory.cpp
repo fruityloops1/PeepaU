@@ -6,7 +6,7 @@ class Coin;
 namespace pe {
 
 static al::ActorFactoryTableEntry customActorEntries[] = {
-    { "Kuribo", pe::createActorFunction<TestActor> }
+    { "TestActor", pe::createActorFunction<TestActor> }
 };
 
 pe::ProjectActorFactory::ProjectActorFactory()

@@ -13,10 +13,10 @@ class ActorFactory : public Factory<CreateActorFunctionType> {
     ByamlIter mConvertNameTable;
 
 public:
-    ActorFactory(const char* pName);
+    ActorFactory(const char* name);
 };
 
 template <typename T>
-LiveActor* createActorFunction(const char* pName);
+LiveActor* createActorFunction(const char* name);
 
 } // namespace al

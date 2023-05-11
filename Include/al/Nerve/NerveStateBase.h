@@ -8,7 +8,7 @@ class NerveStateBase : public NerveExecutor {
     bool mIsDead;
 
 public:
-    NerveStateBase(const char* pName);
+    NerveStateBase(const char* name);
     virtual ~NerveStateBase();
 
     virtual void init();
@@ -26,7 +26,7 @@ protected:
     LiveActor* mHost;
 
 public:
-    ActorStateBase(const char* pName, LiveActor* pHost);
+    ActorStateBase(const char* name, LiveActor* host);
     virtual ~ActorStateBase();
 };
 

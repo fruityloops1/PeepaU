@@ -28,6 +28,18 @@ class HitSensor;
 class ScreenPointDirector;
 class ScreenPointTarget;
 class ScreenPointer;
+class ShadowKeeper;
+class ActorParamHolder;
+class HitReactionKeeper;
+class ScreenPointKeeper;
+class HitSensorKeeper;
+class CollisionParts;
+class ActorScoreKeeper;
+class ActorItemKeeper;
+class ActorActionKeeper;
+class ActorExecuteInfo;
+class Collider;
+class ActorPrePassLightKeeper;
 
 class LiveActor : public IUseNerve,
                   public IUseEffectKeeper,
@@ -41,31 +53,32 @@ class LiveActor : public IUseNerve,
 protected:
     const char* const mName;
     ActorPoseKeeperBase* mActorPoseKeeper;
-    void* _2C;
-    void* _30;
-    void* _34;
-    void* _38;
-    void* _3C;
-    void* _40;
+    ActorExecuteInfo* mExecuteInfo;
+    ActorActionKeeper* mActionKeeper;
+    ActorItemKeeper* mItemKeeper;
+    ActorScoreKeeper* mScoreKeeper;
+    Collider* mCollider;
+    CollisionParts* mCollisionParts;
     ModelKeeper* mModelKeeper;
     NerveKeeper* mNerveKeeper;
-    void* _4C;
-    void* _50;
+    HitSensorKeeper* mHitSensorKeeper;
+    ScreenPointKeeper* mScreenPointKeeper;
     EffectKeeper* mEffectKeeper;
     AudioKeeper* mAudioKeeper;
-    void* _5C;
+    HitReactionKeeper* mHitReactionKeeper;
     StageSwitchKeeper* mStageSwitchKeeper;
     RailKeeper* mRailKeeper;
-    void* _68;
-    void* _6C;
+    ShadowKeeper* mShadowKeeper;
+    ActorPrePassLightKeeper* mPrePassLightKeeper;
     SubActorKeeper* mSubActorKeeper;
-    void* _74;
+    ActorParamHolder* mParamHolder;
     ActorSceneInfo* mActorSceneInfo;
     LiveActorFlag* mLiveActorFlag;
+
     const void* weirdVtbl;
 
 public:
-    LiveActor(const void*, const char* name);
+    LiveActor(const void* /* garbage */, const char* name);
 
     virtual NerveKeeper* getNerveKeeper() const;
     virtual void init(const ActorInitInfo& info);

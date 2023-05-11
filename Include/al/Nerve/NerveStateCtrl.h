@@ -21,12 +21,12 @@ private:
     State* mCurrentState;
 
 public:
-    NerveStateCtrl(int pMaxNerveStates);
+    NerveStateCtrl(int maxNerveStates);
 
-    void addState(NerveStateBase* pState, const Nerve* pNrv, const char* pName);
+    void addState(NerveStateBase* state, const Nerve* nrv, const char* name);
     bool updateCurrentState();
-    void startState(const Nerve* pNrv);
-    State* findStateInfo(const Nerve* pNrv);
+    void startState(const Nerve* nrv);
+    State* findStateInfo(const Nerve* nrv);
     bool isCurrentStateEnd() const;
     void tryEndCurrentState();
 };

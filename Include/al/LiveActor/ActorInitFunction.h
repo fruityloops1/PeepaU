@@ -12,12 +12,12 @@ public:
 
 class LiveActor;
 
-void initActorPoseTFGSV(LiveActor* pActor);
-void initActorPoseTFSV(LiveActor* pActor);
-void initActorPoseTQSV(LiveActor* pActor);
-void initActorPoseTRMSV(LiveActor* pActor);
-void initActorPoseTRSV(LiveActor* pActor);
-void initActorSRT(LiveActor* pActor, const ActorInitInfo& pInfo);
+void initActorPoseTFGSV(LiveActor* actor);
+void initActorPoseTFSV(LiveActor* actor);
+void initActorPoseTQSV(LiveActor* actor);
+void initActorPoseTRMSV(LiveActor* actor);
+void initActorPoseTRSV(LiveActor* actor);
+void initActorSRT(LiveActor* actor, const ActorInitInfo& info);
 
 void initActor(LiveActor* actor, const ActorInitInfo& info);
 void initActorWithArchiveName(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* suffix = 0);
