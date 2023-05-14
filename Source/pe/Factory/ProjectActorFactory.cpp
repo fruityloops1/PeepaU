@@ -1,3 +1,5 @@
+#include "pe/Enemy/Foomin.h"
+#include "pe/Enemy/Heyho.h"
 #include "pe/Factory/ProjectActorFactory.h"
 #include "pe/MapObj/TestActor.h"
 
@@ -6,7 +8,9 @@ class Coin;
 namespace pe {
 
 static al::ActorFactoryTableEntry customActorEntries[] = {
-    { "TestActor", pe::createActorFunction<TestActor> }
+    { "TestActor", pe::createActorFunction<TestActor> },
+    { "Foomin", pe::createActorFunction<Foomin> },
+    { "Heyho", pe::createActorFunction<Heyho> }
 };
 
 pe::ProjectActorFactory::ProjectActorFactory()

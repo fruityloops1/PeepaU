@@ -1,0 +1,9 @@
+---
+Files:
+  - initialize.cpp
+
+Hooks:
+  - type: branch
+    instr: b
+    addr: "0x026afb9c" # _main()
+    func: initialize

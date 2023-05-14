@@ -1,0 +1,8 @@
+---
+Files: []
+
+Hooks:
+  - type: branch
+    instr: bl
+    addr: "0x02061ae0"
+    func: __ct__24PlayerActionGraphBuilderFv

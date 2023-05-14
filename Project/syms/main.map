@@ -10,6 +10,11 @@ __nw__FUi = 0x02369190;
 
 __vtbl__Q2_4sead23SafeStringBase__tm__2_c = 0x10285d50;
 
+# al/Collision/CollisionDirector
+
+validateCollisionParts__2alFPQ2_2al9LiveActor = 0x02436db0;
+invalidateCollisionParts__2alFPQ2_2al9LiveActor = 0x02436e30;
+
 # al/Factory/Factory
 
 createActorFunction__tm__6_4Coin__2alFPCc_PQ2_2al9LiveActor = 0x022d0b80;
@@ -17,9 +22,36 @@ createActorFunction__tm__8_6Togezo__2alFPCc_PQ2_2al9LiveActor = 0x022d2c84;
 
 __ct__Q2_2al12ActorFactoryFPCc = 0x02498068;
 
+# al/LiveActor/ActorActionFunction
+
+startAction__2alFPQ2_2al9LiveActorPCc = 0x023f8f50;
+isActionEnd__2alFPCQ2_2al9LiveActor = 0x023f928c;
+
+startHitReactionDeath__2alFPCQ2_2al9LiveActor = 0x023f9c00;
+
 # al/LiveActor/ActorInitFunction
 
+initActor__2alFPQ2_2al9LiveActorRCQ2_2al13ActorInitInfo = 0x023ff6a0;
 initActorWithArchiveName__2alFPQ2_2al9LiveActorRCQ2_2al13ActorInitInfoRCQ2_4sead23SafeStringBase__tm__2_cPCc = 0x023ff91c;
+
+initNerve__2alFPQ2_2al9LiveActorPCQ2_2al5Nervei = 0x024006b0;
+initNerveState__2alFPQ2_2al9IUseNervePQ2_2al14NerveStateBasePCQ2_2al5NervePCc = 0x02441aa4;
+
+# al/LiveActor/ActorPoseKeeper
+
+getTransPtr__2alFPQ2_2al9LiveActor = 0x02406b1c;
+getFront__2alFPCQ2_2al9LiveActor = 0x02406f40;
+getFrontPtr__2alFPQ2_2al9LiveActor = 0x02406f54;
+
+# al/LiveActor/ActorSensorFunction
+
+getSensorHost__2alFPCQ2_2al9HitSensor = 0x02409364;
+
+# al/LiveActor/ActorSensorMsgFunction
+
+isMsgPlayerFloorTouch__2alFPCQ2_2al9SensorMsg = 0x0240c9cc;
+
+isSensorPlayer__2alFPCQ2_2al9HitSensor = 0x0240f470;
 
 # al/LiveActor/LiveActor
 
@@ -52,7 +84,56 @@ control__Q2_2al9LiveActorFv = 0x02414eb0;
 unk__Q2_2al9LiveActorFv = 0x026b0b48;
 FUN_02414d4c__Q2_2al9LiveActorFv = 0x02414d4c;
 
+# al/Math/MathLerpUtil
+
+__CPR71__lerpVec__2alFPQ2_4sead16Vector3__tm__2_fRCQ2_J17JJ22JT2f = 0x023eded0;
+
+# al/Nerve/NerveUtil
+
+setNerve__2alFPQ2_2al9IUseNervePCQ2_2al5Nerve = 0x02441158;
+isNerve__2alFPCQ2_2al9IUseNervePCQ2_2al5Nerve = 0x02441238;
+getNerveStep__2alFPCQ2_2al9IUseNerve = 0x0244118c;
+isFirstStep__2alFPCQ2_2al9IUseNerve = 0x02441274;
+updateNerveState__2alFPQ2_2al9IUseNerve = 0x02441b90;
+
+# al/Placement/PlacementUtil
+
+tryGetArg__2alFPbRCQ2_2al13ActorInitInfoPCc = 0x0248c4b4;
+tryGetArg__2alFPfRCQ2_2al13ActorInitInfoPCc = 0x0248c49c;
+
+# al/Rail/RailUtil
+
+isExistRail__2alFPCQ2_2al9LiveActor = 0x024437dc;
+
+moveSyncRailLoop__2alFPCQ2_2al9LiveActorf = 0x02443540;
+
+getRailDir__2alFPCQ2_2al9LiveActor = 0x02443384;
+
+# Game/Enemy/EnemyStateBlowDown
+
+__ct__23EnemyStateBlowDownParamFb = 0x020a2ba4;
+__ct__18EnemyStateBlowDownFPQ2_2al9LiveActorPC23EnemyStateBlowDownParam = 0x020a2e64;
+
+# Game/Enemy/EnemyStateUtil
+
+isMsgBlowDown__2rcFPCQ2_2al9SensorMsg = 0x020a3758;
+tryRequestBlowDownAndNextNerve__2rcFPCQ2_2al9SensorMsgPCQ2_2al9HitSensorT2P18EnemyStateBlowDownPCQ2_2al5Nerveb = 0x020a3b64;
+tryRequestPressDownAndNextNerve__2rcFPCQ2_2al9SensorMsgPCQ2_2al9HitSensorT2PQ2_2al9LiveActorPCQ2_2al5Nerveb = 0x020a36e8;
+
+# Game/Enemy/WalkerStateParam
+
+__ct__16WalkerStateParamFfN71 = 0x02118b88;
+
+# Game/Enemy/WalkerStateRailMove
+
+__ct__19WalkerStateRailMoveFPQ2_2al9LiveActorPC16WalkerStateParamPC24WalkerStateRailMoveParam = 0x02119190;
+__ct__24WalkerStateRailMoveParamFf = 0x02118eb0;
+
 # Game/Factory/ProjectActorFactory
 
 __ct__19ProjectActorFactoryFv = 0x022cf6c0;
 sActorEntries__19ProjectActorFactory = 0x10326550;
+
+# Game/Player/PlayerActionGraphBuilder
+
+__ct__24PlayerActionGraphBuilderFv = 0x02259c0c;

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "al/Nerve/Nerve.h"
 #include <sead/prim/seadSafeString.h>
 
 namespace al {
@@ -21,5 +22,7 @@ void initActorSRT(LiveActor* actor, const ActorInitInfo& info);
 
 void initActor(LiveActor* actor, const ActorInitInfo& info);
 void initActorWithArchiveName(LiveActor* actor, const ActorInitInfo& info, const sead::SafeString& archiveName, const char* suffix = 0);
+
+void initNerve(LiveActor* actor, const Nerve* nrv, int maxNerveStates = 0);
 
 } // namespace al

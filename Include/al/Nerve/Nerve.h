@@ -13,7 +13,7 @@ public:
     struct CLASS##Nrv##ACTION : public ::al::Nerve {             \
         virtual void execute(::al::NerveKeeper* host) const      \
         {                                                        \
-            static_cast<CLASS*>(host->getHost())->exe##ACTION(); \
+            static_cast<CLASS*>(host->getUser())->exe##ACTION(); \
         }                                                        \
     };                                                           \
     const CLASS##Nrv##ACTION nrv##CLASS##ACTION = CLASS##Nrv##ACTION();
@@ -22,11 +22,11 @@ public:
     struct CLASS##Nrv##ACTION : public ::al::Nerve {                \
         virtual void execute(::al::NerveKeeper* host) const         \
         {                                                           \
-            static_cast<CLASS*>(host->getHost())->exe##ACTION();    \
+            static_cast<CLASS*>(host->getUser())->exe##ACTION();    \
         }                                                           \
         virtual void executeOnEnd(::al::NerveKeeper* host) const    \
         {                                                           \
-            static_cast<CLASS*>(host->getHost())->exe##ENDACTION(); \
+            static_cast<CLASS*>(host->getUser())->exe##ENDACTION(); \
         }                                                           \
     };                                                              \
     const CLASS##Nrv##ACTION nrv##CLASS##ACTION = CLASS##Nrv##ACTION();

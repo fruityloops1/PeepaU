@@ -1,5 +1,7 @@
 ---
 Files:
+  - pe/Enemy/Foomin.cpp
+  - pe/Enemy/Heyho.cpp
   - pe/MapObj/TestActor.cpp
 
 Hooks: []

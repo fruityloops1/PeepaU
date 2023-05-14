@@ -6,6 +6,7 @@
 #include "al/Collision/CollisionDirector.h"
 #include "al/Effect/EffectKeeper.h"
 #include "al/LiveActor/LiveActorFlag.h"
+#include "al/Nerve/Nerve.h"
 #include "al/Nerve/NerveKeeper.h"
 #include "al/Scene/SceneObjHolder.h"
 #include "al/StageSwitch/StageSwitchKeeper.h"
@@ -93,7 +94,7 @@ public:
     virtual void startClipped();
     virtual void endClipped();
     virtual void attackSensor(HitSensor* me, HitSensor* other);
-    virtual void receiveMsg(const SensorMsg* msg, HitSensor* other, HitSensor* me);
+    virtual bool receiveMsg(const SensorMsg* msg, HitSensor* other, HitSensor* me);
     virtual bool receiveMsgScreenPoint(const SensorMsg* msg, ScreenPointer* pointer, ScreenPointTarget* target);
     virtual const char* getName() const;
     virtual sead::Matrix34f* getBaseMtx() const;
@@ -109,12 +110,20 @@ public:
     virtual void unk();
     virtual void FUN_02414d4c();
 
+    void initItemKeeper(int);
     void initModelKeeper(ModelKeeper*);
+    void initNerve(const Nerve* nrv, int maxNerveStates = 0);
     void initNerveKeeper(NerveKeeper*);
     void initPoseKeeper(ActorPoseKeeperBase*);
     void initRailKeeper(const ActorInitInfo& info);
+    void initSceneInfo(ActorSceneInfo* info);
+    void initScoreKeeper();
+    void initScreenPointKeeper(int);
 
     ActorPoseKeeperBase* getActorPoseKeeper() const { return mActorPoseKeeper; }
+    ActorSceneInfo* getActorSceneInfo() const { return mActorSceneInfo; }
+    HitSensorKeeper* getHitSensorKeeper() const { return mHitSensorKeeper; }
+    ModelKeeper* getModelKeeper() const { return mModelKeeper; }
     SubActorKeeper* getSubActorKeeper() const { return mSubActorKeeper; }
     LiveActorFlag* getLiveActorFlag() const { return mLiveActorFlag; }
 };
