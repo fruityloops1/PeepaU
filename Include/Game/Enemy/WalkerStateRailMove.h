@@ -12,8 +12,8 @@ public:
 };
 
 class WalkerStateRailMove : public al::ActorStateBase {
-    WalkerStateParam* mWalkerParam;
-    WalkerStateRailMoveParam* mParam;
+    const WalkerStateParam* mWalkerParam;
+    const WalkerStateRailMoveParam* mParam;
     void* _18;
     void* _1C;
     void* _20;

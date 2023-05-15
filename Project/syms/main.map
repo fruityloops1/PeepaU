@@ -120,6 +120,23 @@ isMsgBlowDown__2rcFPCQ2_2al9SensorMsg = 0x020a3758;
 tryRequestBlowDownAndNextNerve__2rcFPCQ2_2al9SensorMsgPCQ2_2al9HitSensorT2P18EnemyStateBlowDownPCQ2_2al5Nerveb = 0x020a3b64;
 tryRequestPressDownAndNextNerve__2rcFPCQ2_2al9SensorMsgPCQ2_2al9HitSensorT2PQ2_2al9LiveActorPCQ2_2al5Nerveb = 0x020a36e8;
 
+# Game/Enemy/TargetFinder
+
+__ct__12TargetFinderFPQ2_2al9LiveActorPC17TargetFinderParam = 0x02106690;
+__ct__17TargetFinderParamFfN21UiN41b = 0x02106574;
+
+update__12TargetFinderFv = 0x02106f7c;
+
+# Game/Enemy/WalkerStateChase
+
+__ct__21WalkerStateChaseParamFfN41bT6PCcT8T1 = 0x0211689c;
+__ct__16WalkerStateChaseFPQ2_2al9LiveActorPQ2_4sead16Vector3__tm__2_fP12TargetFinderPC16WalkerStateParamPC21WalkerStateChaseParambPb = 0x02116bbc;
+
+# Game/Enemy/WalkerStateFindPlayer
+
+__ct__26WalkerStateFindPlayerParamFifbPCc = 0x0211753c;
+__ct__21WalkerStateFindPlayerFPQ2_2al9LiveActorPQ2_4sead16Vector3__tm__2_fP12TargetFinderPC16WalkerStateParamPC26WalkerStateFindPlayerParamPC20WalkerStateJumpParam = 0x021176bc;
+
 # Game/Enemy/WalkerStateParam
 
 __ct__16WalkerStateParamFfN71 = 0x02118b88;
@@ -128,6 +145,11 @@ __ct__16WalkerStateParamFfN71 = 0x02118b88;
 
 __ct__19WalkerStateRailMoveFPQ2_2al9LiveActorPC16WalkerStateParamPC24WalkerStateRailMoveParam = 0x02119190;
 __ct__24WalkerStateRailMoveParamFf = 0x02118eb0;
+
+# Game/Enemy/WalkerStateWander
+
+__ct__22WalkerStateWanderParamFiT1fN33bPCcT8 = 0x0211a4a8;
+__ct__17WalkerStateWanderFPQ2_2al9LiveActorPQ2_4sead16Vector3__tm__2_fPC16WalkerStateParamPC22WalkerStateWanderParamP12TargetFinder = 0x0211a770;
 
 # Game/Factory/ProjectActorFactory
 
