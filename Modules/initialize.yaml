@@ -7,3 +7,7 @@ Hooks:
     instr: b
     addr: "0x026afb9c" # _main()
     func: initialize
+  - type: branch
+    instr: b
+    addr: "0x02390dcc" # sead::GameFramework::initialize
+    func: initializeGameFramework

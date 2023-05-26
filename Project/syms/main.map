@@ -1,10 +1,91 @@
-# ghs
+# dynlibs/os
+
+BLOSDynLoad_Acquire = 0x0262a824;
+BOSDynLoad_FindExport = 0x0262acc0;
+
+# null stubs (-> abort)
+
+# for imgui, never actually called
+__gh_float_scanf = 0x026b0af0;
+sscanf = 0x026b0af0;
+
+# ghs / stdlib
 
 __pure_virtual_called = 0x026b0ac0;
+
+vsnprintf = 0x026b2ca8;
+__gh_float_printf = 0x026b1efc;
+__record_needed_destruction = 0x026b0a98;
+__gh_memclr32 = 0x026b6740;
+sinf = 0x026b51c4;
+cosf = 0x026b59f8;
+__vec_new = 0x026b0800;
+sprintf = 0x026b2dcc;
+snprintf = 0x026b2d08;
+sqrtf = 0x026b5150;
+ceilf = 0x026b4f7c;
+floorf = 0x026b4ee0;
+powf = 0x026b532c;
+log = 0x026b4840;
+pow = 0x026b4530;
+__gh_long_long_printf = 0x026b1ad8;
+logf = 0x026b55d4;
+atan2f = 0x026b5b40;
+fmodf = 0x026b4e00;
+__idcvt = 0x026b6d48;
+__ifcvt = 0x026b6d8c;
+__va_arg = 0x026b6ba4;
+__vec_delete = 0x026b0940;
+strlen = 0x026b18ec;
+flockfile = 0x026b33fc;
+funlockfile = 0x026b3424;
+qsort = 0x026b4190;
+acosf = 0x026b5d38;
+putc_unlocked = 0x026b4504;
+__gh_memclr = 0x026b679c;
+_savefpr_25_l_ps = 0x026b6f08;
+_savefpr_28_l_ps = 0x026b6f2c;
+_savefpr_29_l_ps = 0x026b6f38;
+_savefpr_30_l_ps = 0x026b6f44;
+_savefpr_31_l_ps = 0x026b6f50;
+_restfpr_25_l_ps = 0x026b6fbc;
+_restfpr_28_l_ps = 0x026b6fd4;
+_restfpr_29_l_ps = 0x026b6fdc;
+_restfpr_30_l_ps = 0x026b6fe4;
+_restfpr_31_l_ps = 0x026b6fec;
+_restgpr_18_l = 0x026b7118;
+_restgpr_19_l = 0x026b711c;
+_restgpr_22 = 0x026b7080;
+_restgpr_25_l = 0x026b7134;
+_restgpr_28_l = 0x026b7140;
+_restgpr_29 = 0x026b709c;
+_restgpr_30_l = 0x026b7148;
+_restgpr_31 = 0x026b70a4;
+_restgpr_31_l = 0x026b714c;
+_restsmall_24 = 0x026b6cf0;
+_savegpr_18_l = 0x026b70c0;
+_savegpr_19_l = 0x026b70c4;
+_savegpr_22 = 0x026b702c;
+_savegpr_25_l = 0x026b70dc;
+_savegpr_28_l = 0x026b70e8;
+_savegpr_29 = 0x026b7048;
+_savegpr_30_l = 0x026b70f0;
+_savegpr_31 = 0x026b7050;
+_savegpr_31_l = 0x026b70f4;
+_savesmall_24 = 0x026b6cdc;
 
 # sead/basis/seadNew
 
 __nw__FUi = 0x02369190;
+__nw__FUiPQ2_4sead4Heapi = 0x023694d0;
+
+# sead/heap/seadExpHeap
+
+tryCreate__Q2_4sead7ExpHeapSFUiRCQ2_4sead23SafeStringBase__tm__2_cPQ2_4sead4HeapiQ3_4sead4Heap13HeapDirectionb = 0x02379df0;
+
+# sead/heap/seadHeapMgr
+
+sRootHeaps__Q2_4sead7HeapMgr = 0x10c027f8;
 
 # sead/prim/seadSafeString
 
@@ -39,6 +120,7 @@ initNerveState__2alFPQ2_2al9IUseNervePQ2_2al14NerveStateBasePCQ2_2al5NervePCc = 
 
 # al/LiveActor/ActorPoseKeeper
 
+getTrans__2alFPCQ2_2al9LiveActor = 0x024068e4;
 getTransPtr__2alFPQ2_2al9LiveActor = 0x02406b1c;
 getFront__2alFPCQ2_2al9LiveActor = 0x02406f40;
 getFrontPtr__2alFPQ2_2al9LiveActor = 0x02406f54;

@@ -17,12 +17,17 @@ Targets: # key/value pairs of indefinite target configurations
     BaseRpx: # name of {RpxDir}/*.rpx file to use with this target (default: TargetName)
     Modules:
       - initialize
+      - dynlibs
+      - wrappers
+      - util
+      - imgui
       - ActorFactory
       - Actors
       - CourseSelect
     Defines:
-      - # list of additional C++ defines to set with this target (default: empty list)
-      - # ...
+      - IMGUI_USER_CONFIG="imgui_gx2/gx2_imgui_config.h"
+      - IMGUI_DISABLE_FILE_FUNCTIONS
+      - IMGUI_DISABLE_DEFAULT_ALLOCATORS
     Remove/Modules:
       - # list of names of global modules to remove from compilation with this target (default: empty list)
       - # ...
