@@ -2,6 +2,5 @@
 Files:
   - pe/Util/DbgHeap.cpp
   - pe/Util/Diag.cpp
-  - pe/Util/Log.cpp
 
 Hooks: []

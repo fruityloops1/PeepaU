@@ -6,11 +6,7 @@
 
 extern "C" int printf(const char* fmt, ...)
 {
-    va_list arg;
-    va_start(arg, fmt);
-    int length = pe::log(fmt, arg);
-    va_end(arg);
-    return length;
+    return 0;
 }
 
 extern "C" void* memcpy(void* DST, const void* SRC, size_t LEN)

@@ -5,13 +5,19 @@
 namespace pe {
 
 void abort();
-void abortWithMsg(const char* fmt, ...);
+void assertionFailure(const char* file, int line, const char* failedCondition);
 
-#define PE_ASSERT(COND)                                                                 \
-    do {                                                                                \
-        if (!(COND)) {                                                                  \
-            pe::abortWithMsg("Assertion failed: %s:%d: %s", __FILE__, __LINE__, #COND); \
-        }                                                                               \
+#define PE_ABORT() ::pe::abort
+
+#define PE_ABORT_MSG(MSG, ...) \
+    PE_LOG(MSG, __VA_ARGS__);  \
+    ::pe::abort()
+
+#define PE_ASSERT(COND)                                      \
+    do {                                                     \
+        if (!(COND)) {                                       \
+            pe::assertionFailure(__FILE__, __LINE__, #COND); \
+        }                                                    \
     } while (0)
 
 } // namespace pe

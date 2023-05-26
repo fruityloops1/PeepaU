@@ -21,8 +21,8 @@
  * 3. This notice may not be removed or altered from any source
  * distribution.
  ***************************************************************************/
-#include "dynlibs/os/functions.h"
 #include "dynlibs/gx2/types.h"
+#include "dynlibs/os/functions.h"
 
 u32 gx2Handle = 0;
 
@@ -30,8 +30,8 @@ EXPORT_DECL(void, GX2Init, u32* initAttribs);
 EXPORT_DECL(void, GX2Shutdown, void);
 EXPORT_DECL(void, GX2Flush, void);
 EXPORT_DECL(void, GX2ResetGPU, u32);
-EXPORT_DECL(s32,  GX2GetMainCoreId, void);
-EXPORT_DECL(s32,  GX2DrawDone, void);
+EXPORT_DECL(s32, GX2GetMainCoreId, void);
+EXPORT_DECL(s32, GX2DrawDone, void);
 EXPORT_DECL(void, GX2ClearColor, GX2ColorBuffer* colorBuffer, f32 r, f32 g, f32 b, f32 a);
 EXPORT_DECL(void, GX2SetViewport, f32 x, f32 y, f32 w, f32 h, f32 nearZ, f32 farZ);
 EXPORT_DECL(void, GX2SetScissor, u32 origX, u32 origY, u32 wd, u32 ht);
@@ -44,7 +44,7 @@ EXPORT_DECL(void, GX2CopyColorBufferToScanBuffer, const GX2ColorBuffer* colorBuf
 EXPORT_DECL(void, GX2SwapScanBuffers, void);
 EXPORT_DECL(void, GX2SetTVEnable, s32 enable);
 EXPORT_DECL(void, GX2SetSwapInterval, u32 swapInterval);
-EXPORT_DECL(u32,  GX2GetSwapInterval, void);
+EXPORT_DECL(u32, GX2GetSwapInterval, void);
 EXPORT_DECL(void, GX2GetSwapStatus, u32* swapCount, u32* flipCount, OSTime* lastFlip, OSTime* lastVsync);
 EXPORT_DECL(void, GX2WaitForVsync, void);
 EXPORT_DECL(void, GX2CalcTVSize, s32 tvRenderMode, s32 format, s32 bufferingMode, u32* size, s32* scaleNeeded);
@@ -68,7 +68,7 @@ EXPORT_DECL(void, GX2InitSamplerDepthCompare, GX2Sampler* sampler, s32 depthComp
 EXPORT_DECL(void, GX2InitSamplerXYFilter, GX2Sampler* sampler, s32 magFilter, s32 minFilter, s32 maxAnisoRatio);
 EXPORT_DECL(void, GX2InitSamplerZMFilter, GX2Sampler* sampler, s32 zFilter, s32 mipFilter);
 EXPORT_DECL(void, GX2SetShaderModeEx, u32 mode, u32 numVsGpr, u32 numVsStackEntries, u32 numGsGpr, u32 numGsStackEntries, u32 numPsGpr, u32 numPsStackEntries);
-EXPORT_DECL(u32,  GX2CalcFetchShaderSizeEx, u32 numAttrib, s32 fetchShaderType, s32 tessellationMode);
+EXPORT_DECL(u32, GX2CalcFetchShaderSizeEx, u32 numAttrib, s32 fetchShaderType, s32 tessellationMode);
 EXPORT_DECL(void, GX2InitFetchShaderEx, GX2FetchShader* fs, void* fsBuffer, u32 count, const GX2AttribStream* attribs, s32 fetchShaderType, s32 tessellationMode);
 EXPORT_DECL(void, GX2SetFetchShader, const GX2FetchShader* fs);
 EXPORT_DECL(void, GX2SetVertexUniformReg, u32 offset, u32 count, const void* values);
@@ -89,37 +89,61 @@ EXPORT_DECL(void, GX2SetDRCScale, u32 width, u32 height);
 EXPORT_DECL(void, GX2SetDRCEnable, s32 enable);
 EXPORT_DECL(void, GX2SetPolygonControl, s32 frontFaceMode, s32 cullFront, s32 cullBack, s32 enableMode, s32 modeFront, s32 modeBack, s32 polyOffsetFront, s32 polyOffsetBack, s32 pointLineOffset);
 EXPORT_DECL(void, GX2SetCullOnlyControl, s32 frontFaceMode, s32 cullFront, s32 cullBack);
-EXPORT_DECL(void, GX2SetDepthStencilControl, s32 enableDepthTest, s32 enableDepthWrite, s32 depthCompFunction,  s32 stencilTestEnable, s32 backStencilEnable, s32 fontStencilFunc, s32 frontStencilZPass, s32 frontStencilZFail, s32 frontStencilFail, s32 backStencilFunc, s32 backStencilZPpass, s32 backStencilZFail, s32 backStencilFail);
+EXPORT_DECL(void, GX2SetDepthStencilControl, s32 enableDepthTest, s32 enableDepthWrite, s32 depthCompFunction, s32 stencilTestEnable, s32 backStencilEnable, s32 fontStencilFunc, s32 frontStencilZPass, s32 frontStencilZFail, s32 frontStencilFail, s32 backStencilFunc, s32 backStencilZPpass, s32 backStencilZFail, s32 backStencilFail);
 EXPORT_DECL(void, GX2SetStencilMask, u8 maskFront, u8 writeMaskFront, u8 refFront, u8 maskBack, u8 writeMaskBack, u8 refBack);
 EXPORT_DECL(void, GX2SetLineWidth, f32 width);
 EXPORT_DECL(void, GX2SetTVGamma, f32 val);
 EXPORT_DECL(void, GX2SetTVScale, u32 x, u32 y);
 EXPORT_DECL(void, GX2SetDRCGamma, f32 gam);
-EXPORT_DECL(s32,  GX2GetSystemTVScanMode, void);
-EXPORT_DECL(s32,  GX2GetSystemDRCScanMode, void);
-EXPORT_DECL(void, GX2RSetAllocator, void* (* allocFunc)(u32, u32, u32), void (* freeFunc)(u32, void*));
+EXPORT_DECL(s32, GX2GetSystemTVScanMode, void);
+EXPORT_DECL(s32, GX2GetSystemDRCScanMode, void);
 EXPORT_DECL(void, GX2CopySurface, GX2Surface* srcSurface, u32 srcMip, u32 srcSlice, GX2Surface* dstSurface, u32 dstMip, u32 dstSlice);
-EXPORT_DECL(s32,  GX2GetLastFrame, s32 target, GX2Texture* texture);
+EXPORT_DECL(s32, GX2GetLastFrame, s32 target, GX2Texture* texture);
 EXPORT_DECL(void, GX2BeginDisplayListEx, void* displayList, u32 size, s32 unkwn);
-EXPORT_DECL(u32,  GX2EndDisplayList, void* list);
+EXPORT_DECL(u32, GX2EndDisplayList, void* list);
 EXPORT_DECL(void, GX2CallDisplayList, void* list, u32 size);
 EXPORT_DECL(void, GX2ExpandAAColorBuffer, GX2ColorBuffer* buffer);
+EXPORT_DECL(void, GX2ClearBuffersEx, GX2ColorBuffer* colorBuffer, GX2DepthBuffer* depthBuffer, f32 r, f32 g, f32 b, f32 a, f32 depthValue, u8 stencilValue, s32 clearFlags);
+EXPORT_DECL(void, GX2RSetAllocator, void* (*allocFunc)(u32, u32, u32), void (*freeFunc)(u32, void*));
 EXPORT_DECL(void, GX2ResolveAAColorBuffer, const GX2ColorBuffer* srcBuffer, GX2Surface* dstSurface, u32 dstMip, u32 dstSlice);
-EXPORT_DECL(u32,  GX2RCreateBuffer, GX2RBuffer* buffer);
+EXPORT_DECL(u32, GX2RCreateBuffer, GX2RBuffer* buffer);
 EXPORT_DECL(void, GX2RDestroyBufferEx, GX2RBuffer* buffer, u32 flags);
 EXPORT_DECL(void*, GX2RLockBufferEx, GX2RBuffer* buffer, u32 flags);
 EXPORT_DECL(void, GX2RUnlockBufferEx, GX2RBuffer* buffer, u32 flags);
 EXPORT_DECL(void, GX2RSetAttributeBuffer, GX2RBuffer* buffer, u32 index, u32 stride, u32 offset);
-EXPORT_DECL(void, GX2ClearBuffersEx, GX2ColorBuffer* colorBuffer, GX2DepthBuffer* depthBuffer, f32 r, f32 g, f32 b, f32 a, f32 depthValue, u8 stencilValue, s32 clearFlags);
 
-void InitAcquireGX2(void) {
+EXPORT_DECL(bool, GX2RBufferExists, GX2RBuffer* buffer);
+EXPORT_DECL(bool, GX2RCreateBufferUserMemory, GX2RBuffer* buffer, void* memory, uint32_t size);
+EXPORT_DECL(uint32_t, GX2RGetBufferAlignment, u32 flags);
+EXPORT_DECL(uint32_t, GX2RGetBufferAllocationSize, GX2RBuffer* buffer);
+EXPORT_DECL(void, GX2RInvalidateBuffer, GX2RBuffer* buffer, u32 flags);
+EXPORT_DECL(void, GX2RSetVertexUniformBlock, GX2RBuffer* buffer, uint32_t location, uint32_t offset);
+EXPORT_DECL(void, GX2RSetPixelUniformBlock, GX2RBuffer* buffer, uint32_t location, uint32_t offset);
+EXPORT_DECL(void, GX2RSetGeometryUniformBlock, GX2RBuffer* buffer, uint32_t location, uint32_t offset);
+EXPORT_DECL(void, GX2RBeginDisplayListEx, GX2RBuffer* displayList, uint32_t unknown, u32 flags);
+EXPORT_DECL(uint32_t, GX2REndDisplayList, GX2RBuffer* displayList);
+EXPORT_DECL(void, GX2RCallDisplayList, GX2RBuffer* displayList, uint32_t size);
+EXPORT_DECL(void, GX2RDirectCallDisplayList, GX2RBuffer* displayList, uint32_t size);
+EXPORT_DECL(void, GX2RDrawIndexed, GX2PrimitiveMode mode, GX2RBuffer* buffer, GX2IndexType indexType, uint32_t count, uint32_t indexOffset, uint32_t vertexOffset, uint32_t numInstances);
+EXPORT_DECL(void, GX2RInvalidateMemory, u32 flags, void* buffer, uint32_t size);
+EXPORT_DECL(bool, GX2RIsUserMemory, u32 flags);
+EXPORT_DECL(bool, GX2RCreateSurface, GX2Surface* surface, u32 flags);
+EXPORT_DECL(bool, GX2RCreateSurfaceUserMemory, GX2Surface* surface, uint8_t* image, uint8_t* mipmap, u32 flags);
+EXPORT_DECL(bool, GX2RDestroySurfaceEx, GX2Surface* surface, u32 flags);
+EXPORT_DECL(bool, GX2RInvalidateSurface, GX2Surface* surface, int32_t level, u32 flags);
+EXPORT_DECL(void*, GX2RLockSurfaceEx, GX2Surface* surface, int32_t level, u32 flags);
+EXPORT_DECL(void, GX2RUnlockSurfaceEx, GX2Surface* surface, int32_t level, u32 flags);
+
+void InitAcquireGX2(void)
+{
     if (coreinitHandle == 0)
         InitAcquireOS();
 
     OSDynLoad_Acquire("gx2.rpl", &gx2Handle);
 }
 
-extern "C" void InitGX2FunctionPointers(void) {
+extern "C" void InitGX2FunctionPointers(void)
+{
     u32* funcPointer = 0;
     InitAcquireGX2();
 
@@ -203,4 +227,25 @@ extern "C" void InitGX2FunctionPointers(void) {
     OS_FIND_EXPORT(gx2Handle, GX2RLockBufferEx);
     OS_FIND_EXPORT(gx2Handle, GX2RUnlockBufferEx);
     OS_FIND_EXPORT(gx2Handle, GX2RSetAttributeBuffer);
+    OS_FIND_EXPORT(gx2Handle, GX2RBufferExists);
+    OS_FIND_EXPORT(gx2Handle, GX2RCreateBufferUserMemory);
+    OS_FIND_EXPORT(gx2Handle, GX2RGetBufferAlignment);
+    OS_FIND_EXPORT(gx2Handle, GX2RGetBufferAllocationSize);
+    OS_FIND_EXPORT(gx2Handle, GX2RInvalidateBuffer);
+    OS_FIND_EXPORT(gx2Handle, GX2RSetVertexUniformBlock);
+    OS_FIND_EXPORT(gx2Handle, GX2RSetPixelUniformBlock);
+    OS_FIND_EXPORT(gx2Handle, GX2RSetGeometryUniformBlock);
+    OS_FIND_EXPORT(gx2Handle, GX2RBeginDisplayListEx);
+    OS_FIND_EXPORT(gx2Handle, GX2REndDisplayList);
+    OS_FIND_EXPORT(gx2Handle, GX2RCallDisplayList);
+    OS_FIND_EXPORT(gx2Handle, GX2RDirectCallDisplayList);
+    OS_FIND_EXPORT(gx2Handle, GX2RDrawIndexed);
+    OS_FIND_EXPORT(gx2Handle, GX2RInvalidateMemory);
+    OS_FIND_EXPORT(gx2Handle, GX2RIsUserMemory);
+    OS_FIND_EXPORT(gx2Handle, GX2RCreateSurface);
+    OS_FIND_EXPORT(gx2Handle, GX2RCreateSurfaceUserMemory);
+    OS_FIND_EXPORT(gx2Handle, GX2RDestroySurfaceEx);
+    OS_FIND_EXPORT(gx2Handle, GX2RInvalidateSurface);
+    OS_FIND_EXPORT(gx2Handle, GX2RLockSurfaceEx);
+    OS_FIND_EXPORT(gx2Handle, GX2RUnlockSurfaceEx);
 }

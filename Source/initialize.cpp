@@ -1,6 +1,8 @@
 #include "dynlibs/gx2/functions.h"
 #include "dynlibs/os/functions.h"
-#include "imgui/imgui.h"
+#include "dynlibs/padscore/functions.h"
+#include "dynlibs/vpad/functions.h"
+#include "imgui_gx2/imgui_gx2.h"
 #include "pe/Util/DbgHeap.h"
 #include "pe/Util/Log.h"
 #include <sead/basis/seadNew.h>
@@ -28,14 +30,18 @@ extern "C" void initialize()
 
     InitOSFunctionPointers();
     InitGX2FunctionPointers();
+    InitVPADFunctionPointers();
+    InitPadscoreFunctionPointers();
 
-    pe::log("Peepa");
+    PE_LOG_MSG("Peepa");
 }
 
 extern "C" void initializeGameFramework()
 {
-    pe::log("Creating DbgHeap");
+    PE_LOG_MSG("Creating DbgHeap");
     pe::getDbgHeap() = sead::ExpHeap::tryCreate(1 * 1024 * 1024, "DbgHeap", sead::HeapMgr::getRootHeap(0), 4, sead::Heap::cHeapDirection_Forward, false);
     char* d = new (pe::getDbgHeap()) char;
-    pe::log("Test alloc: %p", d);
+    PE_LOG("Test alloc: %p", d);
+
+    imgui_gx2::initialize();
 }

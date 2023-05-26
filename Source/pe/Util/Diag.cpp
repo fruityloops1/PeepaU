@@ -7,15 +7,14 @@ namespace pe {
 void abort()
 {
     OSFatal("Abort");
+    *(int*)0 = 0x123456;
+    while (true)
+        ;
 }
 
-void abortWithMsg(const char* fmt, ...)
+void assertionFailure(const char* file, int line, const char* failedCondition)
 {
-    va_list arg;
-    va_start(arg, fmt);
-    pe::log(fmt, arg);
-    va_end(arg);
-    abort();
+    PE_ABORT_MSG("Assertion failed: %s:%d: %s", file, line, failedCondition);
 }
 
 } // namespace pe

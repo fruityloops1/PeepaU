@@ -5,5 +5,20 @@ Files:
   - imgui/imgui_tables.cpp
   - imgui/imgui_widgets.cpp
   - imgui/imgui.cpp
+  - imgui_gx2/imgui_gx2.cpp
+  - imgui_gx2/imgui_impl_gx2.cpp
+  - imgui_gx2/imgui_impl_wiiu.cpp
+  - imgui_gx2/wut/gfd.cpp
+  - imgui_gx2/wut/whb/gfx_heap.cpp
+  - imgui_gx2/wut/whb/gfx_shader.cpp
 
-Hooks: []
+Hooks:
+  - type: branch
+    instr: b
+    addr: "0x022e5750"
+    func: draw__9imgui_gx2Fv # ProductSequence::drawMain
+  - type: branch
+    instr: bl
+    addr: "0x0236ca4c"
+    func: grabVPADInput__9imgui_gx2F8VPADChanP10VPADStatusUiP13VPADReadError
+
