@@ -136,19 +136,19 @@ public:
     T* front() const { return at(0); }
     T* back() const { return at(mPtrNum - 1); }
 
-    void pushBack(T* ptr) { PtrArrayImpl::pushBack(constCast(ptr)); }
-    void pushFront(T* ptr) { PtrArrayImpl::pushFront(constCast(ptr)); }
+    void pushBack(T* ptr) { PtrArrayImpl::pushBack((T*)ptr); }
+    void pushFront(T* ptr) { PtrArrayImpl::pushFront((T*)ptr); }
 
     T* popBack() { return static_cast<T*>(PtrArrayImpl::popBack()); }
     T* popFront() { return static_cast<T*>(PtrArrayImpl::popFront()); }
 
-    void insert(s32 pos, T* ptr) { PtrArrayImpl::insert(pos, constCast(ptr)); }
+    void insert(s32 pos, T* ptr) { PtrArrayImpl::insert(pos, (T*)ptr); }
     void insert(s32 pos, T* array, s32 count)
     {
         // XXX: is this right?
-        PtrArrayImpl::insertArray(pos, constCast(array), count, sizeof(T));
+        PtrArrayImpl::insertArray(pos, (T*)array), count, sizeof(T);
     }
-    void replace(s32 pos, T* ptr) { PtrArrayImpl::replace(pos, constCast(ptr)); }
+    void replace(s32 pos, T* ptr) { PtrArrayImpl::replace(pos, (T*)ptr); }
 
     s32 indexOf(const T* ptr) const { return PtrArrayImpl::indexOf(ptr); }
 

@@ -21,6 +21,8 @@ Targets: # key/value pairs of indefinite target configurations
       - wrappers
       - util
       - imgui
+      - sead
+      - DbgGui
       - ActorFactory
       - Actors
       - CourseSelect

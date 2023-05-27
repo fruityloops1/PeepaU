@@ -60,10 +60,10 @@ protected:                                                                \
         CLASS::SingletonDisposer_* staticDisposer = CLASS::SingletonDisposer_::sStaticDisposer;              \
         CLASS* instance = CLASS::sInstance;                                                                  \
                                                                                                              \
-        if (CLASS::sInstance == nullptr) {                                                                   \
+        if (CLASS::sInstance == NULL) {                                                                      \
             instance = reinterpret_cast<CLASS*>(new (heap, 4) u8[sizeof(CLASS)]);                            \
                                                                                                              \
-            /*SEAD_ASSERT_MSG(staticDisposer == nullptr, "Create Singleton Twice (%s).", "CLASS");*/         \
+            /*SEAD_ASSERT_MSG(staticDisposer == NULL, "Create Singleton Twice (%s).", "CLASS");*/            \
             staticDisposer = reinterpret_cast<CLASS::SingletonDisposer_*>(instance->mSingletonDisposerBuf_); \
                                                                                                              \
             CLASS::SingletonDisposer_::sStaticDisposer = new (staticDisposer) SingletonDisposer_();          \
@@ -79,31 +79,31 @@ protected:                                                                \
     void CLASS::deleteInstance()                                                                \
     {                                                                                           \
         CLASS::SingletonDisposer_* staticDisposer = CLASS::SingletonDisposer_::sStaticDisposer; \
-        if (CLASS::SingletonDisposer_::sStaticDisposer != nullptr) {                            \
-            CLASS::SingletonDisposer_::sStaticDisposer = nullptr;                               \
+        if (CLASS::SingletonDisposer_::sStaticDisposer != NULL) {                               \
+            CLASS::SingletonDisposer_::sStaticDisposer = NULL;                                  \
             staticDisposer->~SingletonDisposer_();                                              \
                                                                                                 \
-            if (CLASS::sInstance != nullptr)                                                    \
+            if (CLASS::sInstance != NULL)                                                       \
                 delete CLASS::sInstance;                                                        \
                                                                                                 \
-            CLASS::sInstance = nullptr;                                                         \
+            CLASS::sInstance = NULL;                                                            \
         }                                                                                       \
     }
 
-#define SEAD_SINGLETON_DISPOSER_IMPL(CLASS)                                          \
-    CLASS* CLASS::sInstance = nullptr;                                               \
-    CLASS::SingletonDisposer_* CLASS::SingletonDisposer_::sStaticDisposer = nullptr; \
-                                                                                     \
-    SEAD_CREATE_SINGLETON_INSTANCE(CLASS)                                            \
-    SEAD_DELETE_SINGLETON_INSTANCE(CLASS)                                            \
-                                                                                     \
-    CLASS::SingletonDisposer_::~SingletonDisposer_()                                 \
-    {                                                                                \
-        if (this == sStaticDisposer) {                                               \
-            sStaticDisposer = nullptr;                                               \
-            CLASS::sInstance->~CLASS();                                              \
-            CLASS::sInstance = nullptr;                                              \
-        }                                                                            \
+#define SEAD_SINGLETON_DISPOSER_IMPL(CLASS)                                       \
+    CLASS* CLASS::sInstance = NULL;                                               \
+    CLASS::SingletonDisposer_* CLASS::SingletonDisposer_::sStaticDisposer = NULL; \
+                                                                                  \
+    SEAD_CREATE_SINGLETON_INSTANCE(CLASS)                                         \
+    SEAD_DELETE_SINGLETON_INSTANCE(CLASS)                                         \
+                                                                                  \
+    CLASS::SingletonDisposer_::~SingletonDisposer_()                              \
+    {                                                                             \
+        if (this == sStaticDisposer) {                                            \
+            sStaticDisposer = NULL;                                               \
+            CLASS::sInstance->~CLASS();                                           \
+            CLASS::sInstance = NULL;                                              \
+        }                                                                         \
     }
 
 #endif // SEAD_DISPOSER_H_

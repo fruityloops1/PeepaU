@@ -2,8 +2,10 @@
 #include "imgui_gx2/imgui_gx2.h"
 #include "imgui_gx2/imgui_impl_gx2.h"
 #include "imgui_gx2/imgui_impl_wiiu.h"
+#include "pe/DbgGui/DbgGui.h"
 #include "pe/Util/DbgHeap.h"
 #include "pe/Util/Log.h"
+#include "sead/heap/seadHeapMgr.h"
 
 namespace imgui_gx2 {
 
@@ -98,9 +100,11 @@ void initialize()
     colors[ImGuiCol_NavWindowingHighlight] = ImVec4(1.00f, 1.00f, 1.00f, 0.70f);
     colors[ImGuiCol_NavWindowingDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.20f);
     colors[ImGuiCol_ModalWindowDimBg] = ImVec4(0.80f, 0.80f, 0.80f, 0.35f);
+
+    pe::gui::DbgGui::createInstance(pe::getDbgHeap());
 }
 
-static bool sTouchEnabled = false;
+static bool sTouchEnabled = true;
 
 void setTouchEnable(bool enabled)
 {
@@ -112,11 +116,14 @@ static VPADStatus sVPADStatus;
 
 void draw()
 {
+    sead::ScopedCurrentHeapSetter heapSetter(pe::getDbgHeap());
+
     ImGui_ImplGX2_NewFrame();
     ImGui::NewFrame();
     ImGui_ImplWiiU_ProcessInput(&sInput);
 
-    ImGui::ShowDemoWindow();
+    if (pe::gui::DbgGui::instance())
+        pe::gui::DbgGui::instance()->draw();
 
     ImGui::Render();
     ImGui_ImplGX2_RenderDrawData(ImGui::GetDrawData());

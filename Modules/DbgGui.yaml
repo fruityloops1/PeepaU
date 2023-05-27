@@ -1,0 +1,8 @@
+---
+Files:
+  - pe/DbgGui/DbgGui.cpp
+  - pe/DbgGui/MenuBar.cpp
+  - pe/DbgGui/Windows/ImGuiDemo.cpp
+  - pe/DbgGui/Windows/HeapViewer.cpp
+
+Hooks: []

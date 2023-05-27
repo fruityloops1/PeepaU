@@ -39,7 +39,7 @@ extern "C" void initialize()
 extern "C" void initializeGameFramework()
 {
     PE_LOG_MSG("Creating DbgHeap");
-    pe::getDbgHeap() = sead::ExpHeap::tryCreate(1 * 1024 * 1024, "DbgHeap", sead::HeapMgr::getRootHeap(0), 4, sead::Heap::cHeapDirection_Forward, false);
+    pe::getDbgHeap() = sead::ExpHeap::tryCreate(4 * 1024 * 1024, "DbgHeap", sead::HeapMgr::getRootHeap(0), 4, sead::Heap::cHeapDirection_Forward, false);
     char* d = new (pe::getDbgHeap()) char;
     PE_LOG("Test alloc: %p", d);
 

@@ -9,10 +9,7 @@ class MemBlock {
 public:
     static MemBlock* FindManageArea(void* ptr);
 
-protected:
     ListNode mListNode;
-    u16 mHeapCheckTag;
-    u16 mOffset;
     size_t mSize;
 };
 

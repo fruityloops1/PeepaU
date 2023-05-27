@@ -1,0 +1,15 @@
+
+---
+Files:
+  - sead/heap/seadExpHeap.cpp
+  - sead/heap/seadFrameHeap.cpp
+Hooks:
+  - type: funcptr
+    addr: "0x10348028"
+    func: getFreeSize__Q2_4sead7ExpHeapCFv
+  - type: funcptr
+    addr: "0x1037f148"
+    func: getFreeSize__Q2_4sead7ExpHeapCFv
+  - type: funcptr
+    addr: "0x10348170"
+    func: getFreeSize__Q2_4sead9FrameHeapCFv

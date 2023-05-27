@@ -99,7 +99,7 @@ public:
 
     void pushBackChild_(Heap*);
 
-protected:
+    void* _wtf;
     void* mStart;
     size_t mSize;
     Heap* mParent;
@@ -110,6 +110,7 @@ protected:
     CriticalSection mCS;
     BitFlag32 mFlag;
 
+protected:
     friend IDisposer::IDisposer();
     friend IDisposer::~IDisposer();
     friend class HeapMgr;

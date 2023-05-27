@@ -78,6 +78,16 @@ _savesmall_24 = 0x026b6cdc;
 
 __nw__FUi = 0x02369190;
 __nw__FUiPQ2_4sead4Heapi = 0x023694d0;
+__nwa__FUiPQ2_4sead4Heapi = 0x02369554;
+
+# sead/container/seadPtrArray
+
+allocBuffer__Q2_4sead12PtrArrayImplFiPQ2_4sead4HeapT1 = 0x02369bd8;
+
+# sead/heap/seadDisposer
+
+__ct__Q2_4sead9IDisposerFv = 0x0237985c;
+__dt__Q2_4sead9IDisposerFv = 0x023799c4;
 
 # sead/heap/seadExpHeap
 
@@ -85,11 +95,18 @@ tryCreate__Q2_4sead7ExpHeapSFUiRCQ2_4sead23SafeStringBase__tm__2_cPQ2_4sead4Heap
 
 # sead/heap/seadHeapMgr
 
+setCurrentHeap___Q2_4sead7HeapMgrFPQ2_4sead4Heap = 0x0237cb78;
+sInstancePtr__Q2_4sead7HeapMgr = 0x103be940;
 sRootHeaps__Q2_4sead7HeapMgr = 0x10c027f8;
 
 # sead/prim/seadSafeString
 
 __vtbl__Q2_4sead23SafeStringBase__tm__2_c = 0x10285d50;
+
+# sead/thread/seadCriticalSection
+
+lock__Q2_4sead15CriticalSectionFv = 0x02385858;
+unlock__Q2_4sead15CriticalSectionFv = 0x0238588c;
 
 # al/Collision/CollisionDirector
 
