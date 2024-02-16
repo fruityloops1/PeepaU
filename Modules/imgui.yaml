@@ -1,10 +1,10 @@
 ---
 Files:
-  - imgui/imgui_demo.cpp
-  - imgui/imgui_draw.cpp
-  - imgui/imgui_tables.cpp
-  - imgui/imgui_widgets.cpp
-  - imgui/imgui.cpp
+  - ../Libraries/imgui/imgui_demo.cpp
+  - ../Libraries/imgui/imgui_draw.cpp
+  - ../Libraries/imgui/imgui_tables.cpp
+  - ../Libraries/imgui/imgui_widgets.cpp
+  - ../Libraries/imgui/imgui.cpp
   - imgui_gx2/imgui_gx2.cpp
   - imgui_gx2/imgui_impl_gx2.cpp
   - imgui_gx2/imgui_impl_wiiu.cpp
